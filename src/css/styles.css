@@ -32,4 +32,5 @@ h2 {
 }
 .country-list__item {
   display: flex;
+  align-items: center;
 }

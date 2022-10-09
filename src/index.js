@@ -1,12 +1,11 @@
 import './css/styles.css';
-
+import { fetchCountries } from './js/fetchCountries';
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
-import { fetchCountries } from './js/fetchCountries';
 
 const DEBOUNCE_DELAY = 300;
 
-const countryInput = document.querySelector('#search-box');
+const countryInput = document.querySelector('input#search-box');
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
@@ -51,7 +50,7 @@ function renderCountryList(countries) {
     .map(({ name, flags }) => {
       return `
           <li class="country-list__item">
-              <img class="country-list__flag" src="${flags.svg}" alt="Flag of ${name.official}" width = 30px height = 30px>
+              <img class="country-list__flag" src="${flags.svg}" alt="Flag of ${name.official}" width = 70px height = 50px>
               <h2 class="country-list__name">${name.official}</h2>
           </li>
           `;

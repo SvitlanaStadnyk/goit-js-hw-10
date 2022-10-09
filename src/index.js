@@ -1,15 +1,9 @@
 import './css/styles.css';
+
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
+import { fetchCountries } from './js/fetchCountries';
 
-const BASE_URL = 'https://restcountries.com/v3.1/name/';
-const fields = 'fields=name,capital,population,flags,languages';
-
-export function fetchCountries(name) {
-  return fetch(`${BASE_URL}${name}?${fields}`)
-    .then(response => response.json())
-    .catch(error => console.log(error));
-}
 const DEBOUNCE_DELAY = 300;
 
 const countryInput = document.querySelector('#search-box');

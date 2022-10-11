@@ -33,7 +33,7 @@ function onCountryInput() {
           'beforeend',
           renderCountryInfo(countries)
         );
-      } else if (countries.length >= 10) {
+      } else if (countries.length >= 2 && countries.length <= 10) {
         alertTooManyMatches();
       } else {
         countryList.insertAdjacentHTML(

@@ -29,12 +29,15 @@ function onCountryInput() {
           'beforeend',
           renderCountryList(countries)
         );
+
         countryInfo.insertAdjacentHTML(
           'beforeend',
           renderCountryInfo(countries)
         );
-      } else if (countries.length >= 2 && countries.length <= 10) {
+      } else if (countries.length >= 10) {
         alertTooManyMatches();
+      } else if (countries >= 2 && countries <= 10) {
+        renderCountryList(countries);
       } else {
         countryList.insertAdjacentHTML(
           'beforeend',
